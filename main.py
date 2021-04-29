@@ -1,6 +1,7 @@
 import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 # print(basedir)
@@ -29,6 +30,9 @@ db = SQLAlchemy(app)
 
 # Setting up the database is complete
 
+# Setting up migration
+Migrate(app,db) # Connecting the application to the database
+
 ################################################################################################
 
 # Creating first table
@@ -43,11 +47,13 @@ class employee(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.Text, nullable=False)
     age = db.Column(db.Integer)
+    nationality = db.Column(db.Text)
     
     # Setup the __init__ method
-    def __init__(self, name, age):
+    def __init__(self, name, age, nationality):
         self.name = name
         self.age = age
+        self.nationality
     
     # String representation of the database
     def __repr__(self):
