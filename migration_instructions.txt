@@ -1,13 +1,13 @@
 # Migrating the updates and changes in the database.
 
-For Windows users, you are required to use the following lines of code:
+For Windows users, you are required to use the following lines of code in the terminal:
 - set FLASK_APP = <flask_app.py>
 - flask init
   Note: A new directory that contains the migration files is created.
 - flask db migrate -m "message" 
 - flask db upgrade
 
-For MAC/Linux users, you are required to use the following lines of code:
+For MAC/Linux users, you are required to use the following lines of code in the terminal:
 - export FLASK_APP = <flask_app.py>
 - flask init
   Note: A new directory that contains the migration files is created.
