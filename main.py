@@ -53,7 +53,7 @@ class employee(db.Model):
     def __init__(self, name, age, nationality):
         self.name = name
         self.age = age
-        self.nationality
+        self.nationality = nationality
     
     # String representation of the database
     def __repr__(self):
